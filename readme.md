@@ -1,15 +1,4 @@
-# Создание виртуального окружения для работы Python 3.12
- python -m venv Py312 
-# активация виртуального окружения
- .Py312v\Scripts\activat
-# Установка YOLO v5
-git clone https://github.com/ultralytics/yolov5.git
-pip install ultralytics
-cd yolov5
-pip install -r requirements.txt  # install# Далее следуют ошибки совместимости пакетовpe
-
-# Удалил виртуальное окружение Python 3.12 установил Python 3.10
-# Повторил 
+# Создание виртуального окружения для работы Python 3.10
  python -m venv Py310
 # активация виртуального окружения
 .\Py310\Scripts\activate
@@ -71,3 +60,13 @@ python train.py --img 640 --batch 16 --epochs 300 --data dpi.yaml --weights yolo
 ![alt text](img/tf1.png)
 ![alt text](img/tf2.png)
 ![alt text](img/tf3.png)
+
+# Трудности и решение проблемм
+Все работы проводил в среде Window 11. Сначала был установлен Python 3.12, но из-за проблем совместимости пакетов перешел на Python 3.10.
+Обученные модели Yolo заработали сразу, Но своё обучение не запустилось. Пришлось поднимать подсистему WSL2 ubuntu 22.04. Бонусом заработала поддержка GPU. Недостаток - в WSL нет поддержки видеокамеры 
+После обучения модели под Linux она не хотела запускаться под Windows (чтоб проверить распознавани на камере). Лечится добавлением в detect.py следующих строк:
+```python
+import pathlib
+temp = pathlib.PosixPath
+pathlib.PosixPath = pathlib.WindowsPath
+```
