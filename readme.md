@@ -3,9 +3,9 @@
 # активация виртуального окружения
 .\Py310\Scripts\activate
 # Установка YOLO v5
-git clone https://github.com/ultralytics/yolov5.git
-pip install ultralytics
-cd yolov5
+git clone https://github.com/ultralytics/yolov5.git  
+pip install ultralytics  
+cd yolov5  
 pip install -r requirements.txt  # install
 
 # Запустим детектирование с камеры
