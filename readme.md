@@ -1,16 +1,22 @@
 # Создание виртуального окружения для работы Python 3.10
- python -m venv Py310
+```
+python -m venv Py310
+```
 # активация виртуального окружения
+```
 .\Py310\Scripts\activate
+```
 # Установка YOLO v5
+```
 git clone https://github.com/ultralytics/yolov5.git  
 pip install ultralytics  
 cd yolov5  
 pip install -r requirements.txt  # install
-
+```
 # Запустим детектирование с камеры
+```
 python detect.py --weights yolov5s.pt --source 0 --save-crop
-
+```
 # результаты детектирования кота
 runs/detect/exp8/crops/cat:       
 ![alt text](yolov5/runs/detect/exp8/crops/cat/065.jpg)
@@ -27,7 +33,9 @@ runs/detect/exp8/crops/cat:
 ![alt text](yolov5/runs/train/exp13/val_batch0_labels.jpg)
 
 # Запуск обучения
-python train.py --img 640 --batch 16 --epochs 100 --data dpi.yaml --weights yolov5s.pt  
+```
+python train.py --img 640 --batch 16 --epochs 100 --data dpi.yaml --weights yolov5s.pt
+```
 Результат обучения - нерабочий  
 ![alt text](yolov5/runs/train/exp13/confusion_matrix.png)
 
@@ -42,7 +50,9 @@ python train.py --img 640 --batch 16 --epochs 100 --data dpi.yaml --weights yolo
 
 Запускал тренировку с --hyp  
 Изменяя hyp.scratch-V1.yaml
+```
 python train.py --img 640 --batch 16 --epochs 300 --data dpi.yaml --weights yolov5s.pt --hyp hyp.scratch-V1.yaml
+```
 
 Вариант картинок где перестарался с искажением проекции
 ![alt text](yolov5/runs/train/exp19/train_batch0.jpg)
