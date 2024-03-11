@@ -62,13 +62,8 @@ python train.py --img 640 --batch 16 --epochs 300 --data dpi.yaml --weights yolo
 ![alt text](yolov5/runs/train/exp23/train_batch0.jpg)  
 Обучение 300 эпох по времени 6 часов
 # Результаты работы модели
-<video width="320" height="240" controls>
-  <source src="img/ocr.mp4" type="video/mp4">
-</video>
-<video width="320" height="240" controls>
-  <source src="img/ocr56.mp4" type="video/mp4">
-</video>
-
+[![](https://markdown-videos-api.jorgenkh.no/youtube/ZXZe6LHoyWI)](https://youtu.be/ZXZe6LHoyWI)
+[![](https://markdown-videos-api.jorgenkh.no/youtube/mXEjGKz_gVk)](https://youtu.be/mXEjGKz_gVk)
 ---
 
 # TensorBoard
